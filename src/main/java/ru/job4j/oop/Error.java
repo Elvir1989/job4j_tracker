@@ -23,10 +23,8 @@ public class Error {
     public static void main(String[] args) {
         Error error = new Error();
         error.printInfo();
-
         Error errorMassage = new Error(true, 56, "Error Compile");
         errorMassage.printInfo();
-
         Error noError = new Error(false, 100, "Not Errors");
         noError.printInfo();
     }
