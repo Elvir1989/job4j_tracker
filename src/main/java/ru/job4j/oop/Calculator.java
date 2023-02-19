@@ -4,11 +4,13 @@ public class Calculator {
     private static int x = 5;
 
     public static int sum(int y) {
+
         return x + y;
     }
 
     public static int minus(int c) {
-        return x - c;
+
+        return c - x;
     }
 
     public int multiply(int a) {
@@ -16,6 +18,7 @@ public class Calculator {
     }
 
     public int divide(int b) {
+
         return b / x;
     }
 
