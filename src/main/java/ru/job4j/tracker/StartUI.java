@@ -6,7 +6,6 @@ import java.time.format.DateTimeFormatter;
 public class StartUI extends Item {
 
     public static void main(String[] args) {
-
         Item item = new Item();
         LocalDateTime created = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
