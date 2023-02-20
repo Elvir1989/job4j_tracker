@@ -5,6 +5,7 @@ import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PointTest {
+
     @Test
     public void when00to20then2() {
         double expected = 0;
