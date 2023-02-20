@@ -2,9 +2,7 @@ package ru.job4j.oop;
 
 public class Max {
     public static int max(int first, int second) {
-        boolean condition = first > second;
-        int result = condition ? first : second;
-        return result;
+         return first > second ? first : second;
     }
 
     public static int max(int first, int second, int third) {

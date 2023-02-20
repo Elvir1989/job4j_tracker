@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class MaxTest {
+
     @Test
     public void maxWhen2numbers() {
         int expected = 3;
