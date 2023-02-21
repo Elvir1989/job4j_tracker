@@ -44,7 +44,7 @@ public class PointTest {
 
     @Test
     public void when547to123then6() {
-        int expected = 0;
+        int expected = 6;
         int x1 = 5;
         int y1 = 4;
         int z1 = 7;
@@ -57,7 +57,7 @@ public class PointTest {
 
     @Test
     public void when640to440then2() {
-        int expected = 0;
+        int expected = 2;
         int x1 = 6;
         int y1 = 4;
         int z1 = 0;
