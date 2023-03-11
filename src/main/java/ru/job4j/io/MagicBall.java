@@ -10,14 +10,10 @@ public class MagicBall {
         String questions = scan.nextLine();
         int answer = new Random().nextInt(3);
         switch (answer) {
-            case 1 -> {
-                answer = 0;
+            case 1 ->
                 System.out.println("Да");
-            }
-            case 2 -> {
-                answer = 1;
+            case 2 ->
                 System.out.println("Нет");
-            }
             default -> System.out.println("Может быть");
         }
     }
