@@ -17,18 +17,16 @@ public class Matches {
             if (count >= matches && matches <= 3 && matches > 0) {
                 count -= matches;
                 System.out.println("Спичек осталось " + count);
-                if (count == 0) {
-                    if (!turn) {
-                        System.out.println("Выиграл первый игрок");
-                    } else {
-                        System.out.println("Выиграл второй игрок");
-                    }
-                }
             } else {
                 System.out.println("Не верный ввод! Ввод должен быть от 1 до 3 и не более остатка!");
                 turn = !turn;
             }
 
+        }
+        if (!turn) {
+            System.out.println("Выиграл первый игрок");
+        } else {
+            System.out.println("Выиграл второй игрок");
         }
     }
 }
