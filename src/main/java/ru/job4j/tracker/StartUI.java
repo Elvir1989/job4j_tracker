@@ -5,7 +5,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class StartUI extends Item {
-
     public void init(Scanner scanner, Tracker tracker) {
         boolean run = true;
         while (run) {
