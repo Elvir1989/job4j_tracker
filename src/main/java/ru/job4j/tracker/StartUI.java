@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 
 public class StartUI extends Item {
 
-    public static void showAllItem(Input input, Tracker tracker) {
+    public static void showAllItem(Tracker tracker) {
         System.out.println("=== Show all items ===");
         Item[] items = tracker.findAll();
         if (items.length > 0) {
@@ -79,7 +79,7 @@ public class StartUI extends Item {
             if (select == 0) {
                 StartUI.createItem(input, tracker);
             } else if (select == 1) {
-                StartUI.showAllItem(input, tracker);
+                StartUI.showAllItem(tracker);
             } else if (select == 2) {
                 StartUI.editItem(input, tracker);
             } else if (select == 3) {
