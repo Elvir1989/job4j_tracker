@@ -25,7 +25,7 @@ public class StartUI extends Item {
         System.out.println("Добавленная заявка: " + item);
     }
 
-    public static void editItem(Input input, Tracker tracker) {
+   /* public static void editItem(Input input, Tracker tracker) {
         System.out.println("=== Edit item ====");
         int id = input.askInt("Enter id ");
         String name = input.askStr("Enter name ");
@@ -35,7 +35,7 @@ public class StartUI extends Item {
         } else {
             System.out.println("Ошибка замены заявки.");
         }
-    }
+    }*/
 
     public static void deleteItem(Input input, Tracker tracker) {
         System.out.println("=== Delete item ===");
@@ -71,44 +71,29 @@ public class StartUI extends Item {
         }
     }
 
-    public void init(Input input, Tracker tracker) {
+    public void init(Input input, Tracker tracker, UserAction[] actions) {
         boolean run = true;
         while (run) {
-            showMenu();
+            showMenu(actions);
             int select = input.askInt("Select: ");
-            if (select == 0) {
-                StartUI.createItem(input, tracker);
-            } else if (select == 1) {
-                StartUI.showAllItem(tracker);
-            } else if (select == 2) {
-                StartUI.editItem(input, tracker);
-            } else if (select == 3) {
-                StartUI.deleteItem(input, tracker);
-            } else if (select == 4) {
-                StartUI.findById(input, tracker);
-            } else if (select == 5) {
-                StartUI.findByName(input, tracker);
-            } else if (select == 6) {
-                run = false;
-            }
+            UserAction action = actions[select];
+            run = action.execute(input, tracker);
         }
     }
 
-    private void showMenu() {
-        String[] menu = {
-                "Add new Item", "Show all items", "Edit item",
-                "Delete item", "Find item by id", "Find items by name",
-                "Exit Program"
-        };
-        System.out.println("Menu: ");
-        for (int i = 0; i < menu.length; i++) {
-            System.out.println(i + ". " + menu[i]);
+    private void showMenu(UserAction[] actions) {
+        System.out.println("Menu. ");
+        for (int index = 0; index < actions.length; index++) {
+            System.out.println(index + ". " + actions[index].name());
         }
     }
 
     public static void main(String[] args) {
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
-        new StartUI().init(input, tracker);
+        UserAction[] actions = {
+                new CreateAction()
+        };
+        new StartUI().init(input, tracker, actions);
     }
 }
