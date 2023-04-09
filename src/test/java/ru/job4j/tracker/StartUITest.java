@@ -32,14 +32,14 @@ public class StartUITest {
     @Test
     public void whenDeleteItem() {
         Tracker tracker = new Tracker();
-        Item item = new Item(null);
+        Item item = new Item();
         tracker.add(item);
         String[] answers = {
                 String.valueOf(item.getId()),
-                null
         };
-        StartUI.editItem(new StubInput(answers), tracker);
-        Item edited = tracker.findById(item.getId());
-        assertThat(edited.getName()).isEqualTo(null);
+        StartUI.deleteItem(new StubInput(answers), tracker);
+        Item deleted = tracker.findById(item.getId());
+        assertThat(deleted).isNull();
     }
+
 }
