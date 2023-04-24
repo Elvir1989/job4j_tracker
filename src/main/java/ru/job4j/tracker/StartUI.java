@@ -1,13 +1,11 @@
 package ru.job4j.tracker;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+public class StartUI {
 
-public class StartUI extends Item {
     public void init(Input input, Tracker tracker, UserAction[] actions) {
         boolean run = true;
         while (run) {
-            showMenu(actions);
+            this.showMenu(actions);
             int select = input.askInt("Select: ");
             UserAction action = actions[select];
             run = action.execute(input, tracker);
