@@ -25,7 +25,7 @@ public class StartUI extends Item {
         System.out.println("Добавленная заявка: " + item);
     }
 
-   /* public static void editItem(Input input, Tracker tracker) {
+    public static void editItem(Input input, Tracker tracker) {
         System.out.println("=== Edit item ====");
         int id = input.askInt("Enter id ");
         String name = input.askStr("Enter name ");
@@ -35,7 +35,7 @@ public class StartUI extends Item {
         } else {
             System.out.println("Ошибка замены заявки.");
         }
-    }*/
+    }
 
     public static void deleteItem(Input input, Tracker tracker) {
         System.out.println("=== Delete item ===");
@@ -92,8 +92,12 @@ public class StartUI extends Item {
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
         UserAction[] actions = {
-                new CreateAction()
+                new CreateAction(), new ReplaceAction(),
+                new EditAction(), new DeleteAction(),
+                new FindByNameAction(), new FindByIdAction(),
+                new ShowAction(), new ExitAction()
         };
+
         new StartUI().init(input, tracker, actions);
     }
 }
